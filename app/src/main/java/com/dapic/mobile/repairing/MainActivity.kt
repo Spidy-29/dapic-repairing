@@ -9,7 +9,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.dapic.mobile.repairing.ui.MainNavigation
-import com.dapic.mobile.repairing.ui.theme.DapicAttendanceTheme
+import com.dapic.mobile.repairing.ui.theme.DapicRepairingTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-            DapicAttendanceTheme(
+            DapicRepairingTheme(
                 dynamicColor = false
             ) {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

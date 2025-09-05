@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.dapic.mobile.repairing.DataRepository
 import com.dapic.mobile.repairing.SplashViewModel
-import com.dapic.mobile.repairing.ui.theme.DapicAttendanceTheme
+import com.dapic.mobile.repairing.ui.theme.DapicRepairingTheme
 @Composable
 fun SplashScreen(
     viewModel: SplashViewModel = hiltViewModel(),
@@ -155,7 +155,7 @@ fun PreviewSplashScreen() {
             onComplete(true)
         }
     }
-    DapicAttendanceTheme(dynamicColor = false) {
+    DapicRepairingTheme(dynamicColor = false) {
         SplashScreen(viewModel = fakeViewModel as SplashViewModel, onSplashComplete = {})
     }
 }
