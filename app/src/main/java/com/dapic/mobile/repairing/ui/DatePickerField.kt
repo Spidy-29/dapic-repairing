@@ -1,10 +1,10 @@
 package com.dapic.mobile.repairing.ui
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,11 +32,12 @@ fun DatePickerField(
         label = { Text(label) },
         readOnly = true, // Make it read-only
         trailingIcon = {
-            Icon(
-                imageVector = Icons.Default.DateRange,
-                contentDescription = "Select Date",
-                modifier = Modifier.clickable { showDatePicker = true }
-            )
+            IconButton(onClick = { showDatePicker = true }) {
+                Icon(
+                    imageVector = Icons.Default.DateRange,
+                    contentDescription = "Select Date"
+                )
+            }
         },
         modifier = Modifier.fillMaxWidth()
     )
