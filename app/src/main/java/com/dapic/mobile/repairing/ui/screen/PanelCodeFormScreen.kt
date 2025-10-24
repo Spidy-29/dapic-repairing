@@ -64,7 +64,7 @@ fun PanelCodeFormScreen(
             },
             placeholder = { Text(text = "Panel Code") },
             maxLines = 1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -79,7 +79,7 @@ fun PanelCodeFormScreen(
             },
             placeholder = { Text(text = "So No") },
             maxLines = 1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             modifier = Modifier.fillMaxWidth()
         )
 

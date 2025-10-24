@@ -6,23 +6,23 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.dapic.mobile.repairing.FormViewModel
-import com.dapic.mobile.repairing.ui.screen.EmployeeAuthFormScreen
-import com.dapic.mobile.repairing.ui.screen.EndUserNameFormScreen
-import com.dapic.mobile.repairing.ui.screen.SplashScreen
 import com.dapic.mobile.repairing.ui.screen.CallTypeFormScreen
 import com.dapic.mobile.repairing.ui.screen.CurrentStatusFormScreen
 import com.dapic.mobile.repairing.ui.screen.DateFormScreen
+import com.dapic.mobile.repairing.ui.screen.EmployeeAuthFormScreen
+import com.dapic.mobile.repairing.ui.screen.EndUserNameFormScreen
 import com.dapic.mobile.repairing.ui.screen.OEMNameFormScreen
 import com.dapic.mobile.repairing.ui.screen.PanelCodeFormScreen
 import com.dapic.mobile.repairing.ui.screen.RemarkFormScreen
 import com.dapic.mobile.repairing.ui.screen.ServiceReqNumberFormScreen
+import com.dapic.mobile.repairing.ui.screen.SplashScreen
 import com.dapic.mobile.repairing.ui.screen.TABillFormScreen
+import com.dapic.mobile.repairing.ui.screen.UnifiedFormScreen
 import com.dapic.mobile.repairing.ui.screen.WorkAllocationFormScreen
 
 const val SPLASH_SCREEN = "SPLASH_SCREEN"
-
-//const val AUTH_SCREEN = "AUTH_SCREEN"
 const val EMPLOYEE_AUTH_SCREEN = "EMPLOYEE_AUTH_SCREEN"
+const val UNIFIED_FORM_SCREEN = "UNIFIED_FORM_SCREEN"
 const val DATE_SCREEN = "DATE_SCREEN"
 const val WORK_ALLOCATION_SCREEN = "WORK_ALLOCATION_SCREEN"
 const val OEM_NAME_SCREEN = "OEM_NAME_SCREEN"
@@ -47,14 +47,26 @@ fun MainNavigation(viewModel: FormViewModel = hiltViewModel()) {
                 }
             }
         }
-        // Employee Code Form Screen
+        // Employee Authentication Screen
         composable(EMPLOYEE_AUTH_SCREEN) {
             EmployeeAuthFormScreen(viewModel = viewModel, onContinue = {
-                navController.navigate(DATE_SCREEN)
+                navController.navigate(UNIFIED_FORM_SCREEN)
             })
         }
 
-        // Date Form Screen
+        // Unified Form Screen - All forms in one scrollable view
+        composable(UNIFIED_FORM_SCREEN) {
+            UnifiedFormScreen(viewModel = viewModel, onSubmit = {
+                viewModel.clearValues()
+                navController.navigate(EMPLOYEE_AUTH_SCREEN) {
+                    popUpTo(EMPLOYEE_AUTH_SCREEN) {
+                        inclusive = false
+                    }
+                }
+            })
+        }
+
+        /*// Date Form Screen
         composable(
             route = DATE_SCREEN,
         ) { backStackEntry ->
@@ -170,6 +182,6 @@ fun MainNavigation(viewModel: FormViewModel = hiltViewModel()) {
                     } // Remove SplashScreen from backstack
                 }
             })
-        }
+        }*/
     }
 }

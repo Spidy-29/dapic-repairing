@@ -59,7 +59,7 @@ fun TABillFormScreen(
             onValueChange = viewModel::updateTABill,
             placeholder = { Text(text = "Bill no") },
             maxLines = 1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             modifier = Modifier.fillMaxWidth()
         )
 

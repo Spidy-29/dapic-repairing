@@ -19,8 +19,8 @@ fun FormDropDownField(
     canUserType:Boolean = false,
     onSelect: (String) -> Unit
 ) {
-    Text(text = fieldLabel, style = MaterialTheme.typography.titleMedium)
-    Spacer(modifier = Modifier.height(16.dp))
+//    Text(text = fieldLabel, style = MaterialTheme.typography.titleMedium)
+//    Spacer(modifier = Modifier.height(16.dp))
 
     DropdownTextField(
         itemList = itemList,

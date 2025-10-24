@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="Theme.DapicRepairing" parent="android:Theme.Material.Light.NoActionBar">
-        <!-- Edge-to-edge support -->
+        <!-- Edge-to-edge support for API 21+ -->
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <!-- Make status bar icons dark (for light backgrounds) -->
         <item name="android:windowLightStatusBar">true</item>
+        <!-- Enable edge-to-edge -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 </resources>

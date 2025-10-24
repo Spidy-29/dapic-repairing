@@ -59,7 +59,7 @@ fun ServiceReqNumberFormScreen(
             onValueChange = viewModel::updateServiceRequestNumber,
             placeholder = { Text(text = "Code") },
             maxLines = 1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             modifier = Modifier.fillMaxWidth()
         )
 
